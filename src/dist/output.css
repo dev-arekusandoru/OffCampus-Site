@@ -716,9 +716,27 @@ video {
   margin-bottom: 2.5rem;
 }
 
+.my-2 {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
 .my-4 {
   margin-top: 1rem;
   margin-bottom: 1rem;
+}
+
+.my-5 {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
+}
+
+.mt-10 {
+  margin-top: 2.5rem;
 }
 
 .mt-2 {
@@ -838,6 +856,10 @@ video {
 
 .h-\[400px\] {
   height: 400px;
+}
+
+.h-\[50px\] {
+  height: 50px;
 }
 
 .min-h-screen {
@@ -1983,18 +2005,14 @@ video {
      object-fit: scale-down;
 }
 
-.p-10 {
-  padding: 2.5rem;
-}
-
 .px-10 {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
 
-.px-20 {
-  padding-left: 5rem;
-  padding-right: 5rem;
+.px-\[160px\] {
+  padding-left: 160px;
+  padding-right: 160px;
 }
 
 .py-10 {
@@ -2005,6 +2023,28 @@ video {
 .py-3 {
   padding-top: 0.75rem;
   padding-bottom: 0.75rem;
+}
+
+.py-\[30px\] {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+
+.py-\[50px\] {
+  padding-top: 50px;
+  padding-bottom: 50px;
+}
+
+.pb-10 {
+  padding-bottom: 2.5rem;
+}
+
+.pb-\[50px\] {
+  padding-bottom: 50px;
+}
+
+.pt-5 {
+  padding-top: 1.25rem;
 }
 
 .pt-\[75px\] {
@@ -2070,6 +2110,10 @@ video {
 .text-5xl {
   font-size: 3rem;
   line-height: 1;
+}
+
+.text-\[20px\] {
+  font-size: 20px;
 }
 
 .text-\[22px\] {
