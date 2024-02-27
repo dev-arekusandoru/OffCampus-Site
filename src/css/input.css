@@ -1,5 +1,0 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
-
-/* To start coding and view changes live, run this: npx tailwindcss -i ./src/css/input.css -o ./dist/output.css --watch */
