@@ -18,6 +18,7 @@ export default function Home() {
 									alt='Icon'
 									width={420}
 									height={420}
+									unoptimized
 									className='rounded-[50px]'
 								/>
 							</div>
@@ -128,7 +129,8 @@ export default function Home() {
 							src={moises}
 							width={420}
 							height={420}
-							className='rounded-[50px]'
+							unoptimized
+							className='rounded-[25px] md:rounded-[50px]'
 							alt='Co-founder Moises Ramirez Gomez'
 						/>
 					</div>
@@ -141,6 +143,7 @@ export default function Home() {
 							src={alexandru}
 							width={420}
 							height={420}
+							unoptimized
 							className='rounded-[25px] md:rounded-[50px]'
 							alt='Co-founder Alexandru Muresan'
 						/>
