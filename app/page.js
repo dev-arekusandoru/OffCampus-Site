@@ -66,15 +66,15 @@ export default function Home() {
 							<br></br>  */}
 							At OffCampus, we understand the challenges students
 							face when seeking accommodations that align with
-							their budget, preferences, and lifestyle. That's why
-							we've developed a revolutionary platform that
-							simplifies the housing search process and fosters
-							community connections. <br></br>
+							their budget, preferences, and lifestyle.
+							That&apos;s why we&apos;ve developed a revolutionary
+							platform that simplifies the housing search process
+							and fosters community connections. <br></br>
 							<br></br>Our mission is to empower students and
 							residents to find their ideal living spaces while
 							building meaningful connections within their
 							communities. <br></br>
-							<br></br>Whether you're a university student
+							<br></br>Whether you&apos;re a university student
 							preparing for the next academic year or a young
 							professional searching for your next home, OffCampus
 							is here to make the process seamless and enjoyable.
@@ -115,7 +115,7 @@ export default function Home() {
 						<p className='flex-1 w-[86%] max-w-[650px] text-[16px] md:text-[18px] lg:text-[20px] text-center items-center flex pt-[14px] lg:pt-0 lg:mb-[20px]'>
 							Bringing expertise in international business and
 							strategic planning, Moises plays a pivotal role in
-							shaping OffCampus's growth trajectory. As a
+							shaping OffCampus&apos;s growth trajectory. As a
 							co-founder, Moises ensures that OffCampus remains at
 							the forefront of the housing market, with a keen eye
 							for market trends and a dedication to user
