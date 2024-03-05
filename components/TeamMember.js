@@ -7,7 +7,9 @@ export default function TeamMember(props) {
 		<div
 			className={`flex flex-col items-center ${
 				props.left ? 'lg:flex-row' : 'lg:flex-row-reverse'
-			} w-[90%] md:w-[90%] lg:w-full mt-10 lg:bg-background`}
+			} w-[90%] md:w-[90%] lg:w-full ${
+				!props.marginT ? 'mt-10' : props.marginT
+			} lg:bg-background`}
 		>
 			{/* <!-- Image --> */}
 			<FadeInSection direction={props.left ? 'left' : 'right'}>

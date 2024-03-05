@@ -1,7 +1,7 @@
 import React from 'react';
 
 export function FadeInSection(props) {
-	const [isVisible, setVisible] = React.useState(true);
+	const [isVisible, setVisible] = React.useState(false);
 	const domRef = React.useRef();
 	React.useEffect(() => {
 		const observer = new IntersectionObserver(
@@ -11,8 +11,6 @@ export function FadeInSection(props) {
 						setTimeout(() => {
 							setVisible(true);
 						}, props.delay || 0); // If no delay prop provided, default to 0
-					} else {
-						setVisible(false);
 					}
 				});
 			},
@@ -23,7 +21,11 @@ export function FadeInSection(props) {
 			}
 		);
 		observer.observe(domRef.current);
-		return () => observer.unobserve(domRef.current);
+		return () => {
+			try {
+				observer.unobserve(domRef.current);
+			} catch (e) {}
+		};
 	}, []);
 
 	return (
