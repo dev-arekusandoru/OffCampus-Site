@@ -13,7 +13,7 @@ export default function TeamMember(props) {
 		>
 			{/* <!-- Image --> */}
 			<FadeInSection direction={props.left ? 'left' : 'right'}>
-				<div className='justify-center flex mb-[20px] lg:mb-0 sd:w-[90%] md:w-[420px] lg:w-[400px] xl:w-[420px] mx-10'>
+				<div className='drop-shadow-lg justify-center flex mb-[20px] lg:mb-0 sd:w-[90%] md:w-[420px] lg:w-[400px] xl:w-[420px] mx-10'>
 					<Image
 						src={props.image}
 						width={420}
@@ -30,12 +30,14 @@ export default function TeamMember(props) {
 				direction={props.left ? 'right' : 'left'}
 			>
 				<div
-					className={`flex-1 h-[400px] xl:h-[420px] bg-primary text-background rounded-[25px] md:rounded-[50px] ${
-						props.left ? 'lg:rounded-r-[0px]' : 'lg:rounded-l-[0px]'
-					} justify-start items-center flex flex-col py-[30px]`}
+					className={`flex-1 h-[400px] xl:h-[420px] border-[2px] border-primary bg-background text-background rounded-[25px] md:rounded-[50px] ${
+						props.left
+							? 'lg:rounded-r-[0px] lg:border-r-[0px]'
+							: 'lg:rounded-l-[0px] lg:border-l-[0px]'
+					} justify-start items-center flex flex-col py-[30px] drop-shadow-xl`}
 				>
 					{/* <!-- Text --> */}
-					<div className='flex flex-col items-center w-full'>
+					<div className='flex flex-col items-center w-full text-text'>
 						<div className='flex flex-col items-center sd:flex-row'>
 							<h3 className='text-[30px] font-bold'>
 								{props.first}
@@ -48,7 +50,7 @@ export default function TeamMember(props) {
 							{props.title}
 						</h4>
 					</div>
-					<p className='flex-1 w-[86%] max-w-[650px] text-[16px] md:text-[18px] lg:text-[20px] text-center items-center flex pt-[14px] lg:pt-0 lg:mb-[20px]'>
+					<p className='flex-1 w-[86%] max-w-[650px] text-[16px] md:text-[18px] lg:text-[20px] text-center items-center flex pt-[14px] lg:pt-0 lg:mb-[20px] text-text'>
 						{props.children}
 					</p>
 				</div>

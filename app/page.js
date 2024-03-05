@@ -1,6 +1,6 @@
 'use client';
 
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import { useWindowSize } from '@uidotdev/usehooks';
 import Image from 'next/image';
 import iconImage from '@/assets/icon.png';
@@ -11,18 +11,18 @@ import TeamMember from '@/components/TeamMember';
 import Testimonial from '@/components/Testimonial';
 import { SectionTitle } from '@/components/Title';
 import Faq from '@/components/FAQ';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import {
 	faComment,
 	faFile,
 	faGraduationCap,
-	faPlus,
 	faShieldHalved
 } from '@fortawesome/free-solid-svg-icons';
 import Resource from '@/components/Resource';
+import { readData } from '@/backend/config';
 
 export default function Home() {
 	const [faqLimit, setFAQLimit] = useState(5);
+	const [faqs, setFaqs] = useState([]);
 	const size = useWindowSize();
 	const testimonials = [
 		[
@@ -49,49 +49,6 @@ export default function Home() {
 			'David M.',
 			'OffCampus saved me so much time and stress during my housing search. I appreciated the variety of listings available and the ability to connect with potential roommates before committing to a lease. Highly recommend!'
 		]
-	];
-	const faqs = [
-		{
-			question: 'How does OffCampus work?',
-			answer: 'OffCampus is a platform designed to help university students find off-campus housing options that match their preferences and budget. Users can search for listings, connect with potential roommates, and communicate with landlords directly through the platform.'
-		},
-		{
-			question: 'Is OffCampus free to use?',
-			answer: 'Yes, OffCampus is free for students to use. Landlords may be charged a subscription fee to list their properties on the platform.'
-		},
-		{
-			question: 'How do I sign up for OffCampus?',
-			answer: "Signing up for OffCampus is easy! Simply visit our website and click on the 'Sign Up' button. You can create an account using your email address or social media accounts."
-		},
-		{
-			question:
-				'What types of housing listings are available on OffCampus?',
-			answer: 'OffCampus offers a variety of housing options, including apartments, houses, condos, and shared accommodations. Listings may vary depending on location and availability.'
-		},
-		{
-			question: 'Can I search for housing options near my university?',
-			answer: "Yes, OffCampus allows you to search for housing options based on your university's location. You can filter listings by proximity to your campus to find options that are conveniently located."
-		},
-		{
-			question: 'How does roommate matching work on OffCampus?',
-			answer: 'OffCampus offers a roommate matching feature that allows users to create profiles and connect with potential roommates who share similar preferences and lifestyle habits. Users can communicate with potential roommates through the platform to determine compatibility.'
-		},
-		{
-			question: 'Is OffCampus available in my city?',
-			answer: 'OffCampus is continuously expanding to new cities and universities. Check our website or contact us to see if OffCampus is available in your city.'
-		},
-		{
-			question: 'Is my personal information secure on OffCampus?',
-			answer: 'Yes, OffCampus takes user privacy and security seriously. We use encryption and other security measures to protect your personal information. You can read more about our privacy policy on our website.'
-		},
-		{
-			question: 'How do I contact OffCampus for support?',
-			answer: "If you have any questions or need support, you can contact OffCampus through our website's contact form or email us directly at [support@email.com]."
-		},
-		{
-			question: 'How can I provide feedback about OffCampus?',
-			answer: "We value your feedback! You can provide feedback about OffCampus through our website's contact form or by emailing us directly at [feedback@email.com]."
-		}
 	];
 	const howItWorks = [
 		{
@@ -120,6 +77,13 @@ export default function Home() {
 			]
 		}
 	];
+
+	useEffect(() => {
+		(async () => {
+			let data = (await readData('website')) || {};
+			setFaqs(Object.values(data?.faqs || {}));
+		})();
+	}, []);
 
 	return (
 		<main className='flex min-h-screen flex-col items-center justify-between bg-background'>
@@ -173,12 +137,12 @@ export default function Home() {
 					</div>
 				</div>
 				{/* <!-- About Us --> */}
-				<FadeInSection width={' w-[90%] lg:w-[50%]'}>
+				<FadeInSection width={' w-[90%] lg:w-[50%]'} direction='right'>
 					<div
 						className='flex flex-col justify-center lg:min-h-screen  text-background'
 						id='about-us'
 					>
-						<div className='flex flex-col justify-center items-center lg:min-h-[90%] py-[20px] bg-primary rounded-[25px] md:rounded-[50px] lg:rounded-l-[60px] lg:rounded-r-[0px]'>
+						<div className='flex flex-col justify-center items-center lg:min-h-[90%] py-[20px] bg-primary rounded-[25px] md:rounded-[50px] lg:rounded-l-[60px] lg:rounded-r-[0px] drop-shadow-xl'>
 							<FadeInSection delay={100}>
 								<h1 className='text-[42px] md:text-[50px] font-bold mb-[12px] lg:mb-[30px]'>
 									About Us
