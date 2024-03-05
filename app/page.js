@@ -225,11 +225,11 @@ export default function Home() {
 					marginT='mt-0'
 				>
 					Bringing expertise in international business and strategic
-					planning, Moises plays a pivotal role in shaping OffCampus's
-					growth trajectory. As a co-founder, Moises ensures that
-					OffCampus remains at the forefront of the housing market,
-					with a keen eye for market trends and a dedication to user
-					satisfaction.
+					planning, Moises plays a pivotal role in shaping
+					OffCampus&apos;s growth trajectory. As a co-founder, Moises
+					ensures that OffCampus remains at the forefront of the
+					housing market, with a keen eye for market trends and a
+					dedication to user satisfaction.
 				</TeamMember>
 				<TeamMember
 					first='Alexandru'
