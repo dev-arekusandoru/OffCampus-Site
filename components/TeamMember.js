@@ -30,19 +30,35 @@ export default function TeamMember(props) {
 				direction={props.left ? 'right' : 'left'}
 			>
 				<div
-					className={`flex-1 h-[400px] xl:h-[420px] border-[2px] border-primary bg-background text-background rounded-[25px] md:rounded-[50px] ${
+					className={`flex-1 lg:h-[400px] xl:h-[420px] border-[2px] border-primary bg-background text-background rounded-[25px] md:rounded-[50px] ${
 						props.left
 							? 'lg:rounded-r-[0px] lg:border-r-[0px]'
 							: 'lg:rounded-l-[0px] lg:border-l-[0px]'
-					} justify-start items-center flex flex-col py-[30px] drop-shadow-xl`}
+					} justify-start items-center flex flex-col py-[10px] drop-shadow-xl`}
 				>
 					{/* <!-- Text --> */}
 					<div className='flex flex-col items-center w-full text-text'>
-						<div className='flex flex-col items-center sd:flex-row'>
+						<div
+							className={`flex flex-col items-center ${
+								props.first === 'Alexandru'
+									? 'sd:flex-row'
+									: 'sm:flex-row'
+							}`}
+						>
 							<h3 className='text-[30px] font-bold'>
 								{props.first}
 							</h3>
-							<h3 className='text-[30px] font-bold sd:ml-2 -mt-[10px] sd:mt-0'>
+							<h3
+								className={`text-[30px] font-bold ${
+									props.first === 'Alexandru'
+										? 'sd:ml-1'
+										: 'sm:ml-2'
+								} -mt-[10px] ${
+									props.first === 'Alexandru'
+										? 'sd:mt-0'
+										: 'sm:mt-0'
+								}`}
+							>
 								{props.last}
 							</h3>
 						</div>

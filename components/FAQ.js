@@ -1,6 +1,7 @@
 import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown, faChevronUp } from '@fortawesome/free-solid-svg-icons';
+import { FadeInSection } from './FadeInSection';
 
 export default function Faq(props) {
 	const [open, setOpen] = React.useState(false);
@@ -27,7 +28,7 @@ export default function Faq(props) {
 				>
 					<FontAwesomeIcon
 						size={'lg'}
-						color='#5094F5'
+						color='#3590F3'
 						icon={open ? faChevronUp : faChevronDown}
 					/>
 				</button>

@@ -86,10 +86,10 @@ export default function Home() {
 	}, []);
 
 	return (
-		<main className='flex min-h-screen flex-col items-center justify-between bg-background'>
+		<main className='flex flex-col items-center justify-between bg-background overflow-hidden'>
 			<div className='w-full flex flex-1 flex-col items-center lg:flex-row'>
 				{/* <!-- Landing Page --> */}
-				<div className='w-full lg:w-[50%] flex flex-col items-center justify-between lg:min-h-screen mb-[40px] lg:mb-0 pt-[25px] sd:pt-[75px]'>
+				<div className='w-full lg:w-[50%] flex flex-col items-center justify-between lg:min-h-dvh mb-[40px] lg:mb-0 pt-[25px] sd:pt-[75px]'>
 					<div>
 						{/* <!-- Logo Image --> */}
 						<FadeInSection>
@@ -139,7 +139,7 @@ export default function Home() {
 				{/* <!-- About Us --> */}
 				<FadeInSection width={' w-[90%] lg:w-[50%]'} direction='right'>
 					<div
-						className='flex flex-col justify-center lg:min-h-screen  text-background'
+						className='flex flex-col justify-center lg:min-h-100vh  text-background'
 						id='about-us'
 					>
 						<div className='flex flex-col justify-center items-center lg:min-h-[90%] py-[20px] bg-primary rounded-[25px] md:rounded-[50px] lg:rounded-l-[60px] lg:rounded-r-[0px] drop-shadow-xl'>
@@ -260,15 +260,25 @@ export default function Home() {
 				{/* <!-- Title --> */}
 				<SectionTitle>Additional Resources</SectionTitle>
 				<div className='flex flex-row flex-wrap my-[10px] items-center justify-center px-[30px] md:px-[100px] w-full gap-y-6 gap-x-6 lg:gap-x-12 max-w-[1400px]'>
-					<Resource icon={faShieldHalved}>Privacy Policy</Resource>
-					<Resource icon={faFile}>Terms of Service</Resource>
-					<Resource icon={faComment}>Provide Feedback</Resource>
-					<Resource icon={faGraduationCap}>
-						Request a University
-					</Resource>
+					<FadeInSection>
+						<Resource icon={faShieldHalved}>
+							Privacy Policy
+						</Resource>
+					</FadeInSection>
+					<FadeInSection delay={60}>
+						<Resource icon={faFile}>Terms of Service</Resource>
+					</FadeInSection>
+					<FadeInSection delay={120}>
+						<Resource icon={faComment}>Provide Feedback</Resource>
+					</FadeInSection>
+					<FadeInSection delay={180}>
+						<Resource icon={faGraduationCap}>
+							Request a University
+						</Resource>
+					</FadeInSection>
 				</div>
 			</div>
-			<div className='w-full h-[30px] mt-[40px] bg-primary'></div>
+			<div className='w-full h-[30px] mt-[40px] bg-background'></div>
 		</main>
 	);
 }
