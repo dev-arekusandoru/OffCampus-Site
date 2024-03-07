@@ -90,7 +90,7 @@ body {
 }
 
 .faq-expanded {
-	max-height: 200px;
+	max-height: 300px;
 	border-top: 1px solid #1212121a;
 	padding-top: 6px;
 	margin-top: 6px;

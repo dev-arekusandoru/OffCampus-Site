@@ -23,65 +23,14 @@ import { readData } from '@/backend/config';
 export default function Home() {
 	const [faqLimit, setFAQLimit] = useState(5);
 	const [faqs, setFaqs] = useState([]);
+	const [testimonials, setTestimonials] = useState([]);
 	const size = useWindowSize();
-	const testimonials = [
-		[
-			'Sarah L.',
-			'OffCampus made finding housing near my university a breeze! The roommate matching feature helped me find the perfect roommate, and the customizable search filters ensured I found a place that met all my needs.'
-		],
-		[
-			'Michael K.',
-			'I was hesitant to use OffCampus at first, but I’m so glad I did. The platform’s user-friendly interface and helpful resources made my housing search stress-free, and I’m now happily settled in my new home.'
-		],
-		[
-			'Emily R.',
-			'I had a specific budget and list of must-have amenities, and OffCampus delivered. Within days, I found a place that met all my criteria, and the whole process was seamless from start to finish.'
-		],
-		[
-			'Alex B.',
-			'OffCampus not only helped me find housing but also introduced me to a vibrant community of fellow students. I’ve attended events and meetups organized through the platform and have truly felt a sense of belonging since moving in.'
-		],
-		[
-			'Maria S.',
-			'As an international student, finding off-campus housing was daunting, but OffCampus made it easy. The platform’s user-friendly interface and helpful resources guided me through the process, and I’m now happily settled in my new home.'
-		],
-		[
-			'David M.',
-			'OffCampus saved me so much time and stress during my housing search. I appreciated the variety of listings available and the ability to connect with potential roommates before committing to a lease. Highly recommend!'
-		]
-	];
-	const howItWorks = [
-		{
-			title: 'How OffCampus Works',
-			content:
-				"OffCampus is a user-friendly platform designed to simplify the off-campus housing search process for university students. Here's how it works:",
-			steps: [
-				'Sign Up: Create a free account on OffCampus using your email address or social media accounts.',
-				'Search Listings: Browse through a wide range of housing options near your university, filtered by location, budget, and amenities.',
-				'Connect with Roommates: Utilize our roommate matching feature to find compatible roommates based on shared preferences and lifestyle habits.',
-				'Communicate with Landlords: Contact landlords directly through the platform to schedule viewings and discuss rental terms.',
-				"Secure Your Housing: Once you've found your ideal housing option, finalize the rental agreement and move in with confidence."
-			]
-		},
-		{
-			title: 'Key Features and Benefits',
-			content:
-				'OffCampus offers a variety of features and benefits to enhance your housing search experience:',
-			points: [
-				'Customized Search Filters: Easily find housing options that meet your specific preferences, such as location, budget, and amenities.',
-				'Roommate Matching: Connect with potential roommates who share similar interests and lifestyle habits, ensuring a harmonious living environment.',
-				'Community Building: Join a vibrant community of students and residents, participate in events, and build lasting friendships.',
-				'Direct Communication: Communicate directly with landlords to ask questions, schedule viewings, and negotiate rental terms.',
-				'User-Friendly Interface: Enjoy a seamless browsing experience on our intuitive platform, accessible on desktop and mobile devices.',
-				'Secure Transactions: Rest assured that your personal information is protected through encryption and other security measures.'
-			]
-		}
-	];
 
 	useEffect(() => {
 		(async () => {
 			let data = (await readData('website')) || {};
 			setFaqs(Object.values(data?.faqs || {}));
+			setTestimonials(Object.values(data?.reviews || {}));
 		})();
 	}, []);
 
@@ -122,7 +71,7 @@ export default function Home() {
 						<FadeInSection delay={150}>
 							<div className='flex flex-col justify-center items-center text-center -mt-[10px] sd:my-10'>
 								<button
-									className='py-3 px-10 rounded-xl my-4 text-xl text-background hover:text-primary active:text-primary bg-primary hover:bg-background active:bg-background border border-background hover:border-primary active:border-primary transition-colors duration-300 hover:cursor-pointer'
+									className='py-3 px-10 rounded-xl my-4 text-xl text-background active:text-primary md:hover:text-primary bg-primary active:bg-background md:hover:bg-background border border-background md:hover:border-primary active:border-primary transition-colors duration-300 hover:cursor-pointer'
 									id='join-button'
 									onClick={() => {
 										alert(
@@ -220,8 +169,8 @@ export default function Home() {
 						.map((testimonial, index) => {
 							return (
 								<FadeInSection key={index} delay={index * 60}>
-									<Testimonial name={testimonial[0]}>
-										{testimonial[1]}
+									<Testimonial name={testimonial.name}>
+										{testimonial.content}
 									</Testimonial>
 								</FadeInSection>
 							);
@@ -272,7 +221,7 @@ export default function Home() {
 						<Resource icon={faComment}>Provide Feedback</Resource>
 					</FadeInSection>
 					<FadeInSection delay={180}>
-						<Resource icon={faGraduationCap}>
+						<Resource icon={faGraduationCap} href='/request'>
 							Request a University
 						</Resource>
 					</FadeInSection>

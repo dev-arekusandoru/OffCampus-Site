@@ -20,18 +20,17 @@ export default function Faq(props) {
 				>
 					{props.title}
 				</h2>
-				<button
+				<div
 					className={
 						' flex flex-row justify-center items-center mb-[2px] hover:cursor-pointer mr-[4px]'
 					}
-					onClick={() => setOpen(!open)}
 				>
 					<FontAwesomeIcon
 						size={'lg'}
 						color='#3590F3'
 						icon={open ? faChevronUp : faChevronDown}
 					/>
-				</button>
+				</div>
 			</div>
 			<div
 				className={`${

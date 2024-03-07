@@ -33,7 +33,7 @@ export function FadeInSection(props) {
 			className={`${props.direction === 'right' ? 'fade-in-right' : ''} 
             ${props.direction === 'left' ? 'fade-in-left' : ''} 
              ${!props.direction ? 'fade-in-top' : ''} 
-            ${isVisible ? 'is-visible' : ''} ${props.width} `}
+            ${isVisible ? 'is-visible' : ''} ${props.width} ${props.style}`}
 			ref={domRef}
 		>
 			{props.children}
