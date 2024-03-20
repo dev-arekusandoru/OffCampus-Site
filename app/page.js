@@ -17,14 +17,21 @@ import {
 	faGraduationCap,
 	faShieldHalved
 } from '@fortawesome/free-solid-svg-icons';
+import {
+	faFacebook,
+	faInstagram,
+	faTwitter
+} from '@fortawesome/free-brands-svg-icons';
 import Resource from '@/components/Resource';
 import { readData } from '@/backend/config';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export default function Home() {
 	const [faqLimit, setFAQLimit] = useState(5);
 	const [faqs, setFaqs] = useState([]);
 	const [testimonials, setTestimonials] = useState([]);
 	const size = useWindowSize();
+	const year = new Date().getFullYear();
 
 	useEffect(() => {
 		(async () => {
@@ -227,7 +234,111 @@ export default function Home() {
 					</FadeInSection>
 				</div>
 			</div>
-			<div className='w-full h-[30px] mt-[40px] bg-background'></div>
+			<div className='w-full flex flex-row justify-center min-h-[250px] mt-[40px] bg-primary pt-4'>
+				<div className='flex flex-col md:flex-row max-w-[1600px]'>
+					<div>
+						<div className='flex flex-row items-center pl-1 md:pl-0'>
+							<Image
+								src={iconImage}
+								width={50}
+								height={50}
+							></Image>
+							<p className='text-[24px] md:text-[30px] font-bold pt-2'>
+								OffCampus
+							</p>
+						</div>
+						<p className='text-[12px] w-[80%] pl-4 md:pt-2'>
+							Simplifying the search for off-campus housing and
+							fostering community connections for university
+							students.
+						</p>
+						<p className='text-background text-[12px] pt-2 pl-4 w-full'>
+							&copy; {year} OffCampus. All rights reserved.
+						</p>
+					</div>
+					<div className='flex flex-row pl-4 pt-6 md:pt-4 gap-10 min-w-[350px]'>
+						<div className='pb-6'>
+							<p className='uppercase font-[600] text-[18px] md:text-[22px]'>
+								Navigate To
+							</p>
+							<div className='flex flex-col gap-1'>
+								<a
+									href='#about-us'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<p className='text-[14px]'>About Us</p>
+								</a>
+								<a
+									href='#meet-the-team'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<p className='text-[14px]'>Meet The Team</p>
+								</a>
+								<a
+									href='#what-our-users-are-saying'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<p className='text-[14px]'>Testimonials</p>
+								</a>
+								<a
+									href='#faqs'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<p className='text-[14px]'>FAQs</p>
+								</a>
+								<a
+									href='#additional-resources'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<p className='text-[14px]'>Resources</p>
+								</a>
+							</div>
+						</div>
+						<div>
+							<p className='uppercase font-[600] text-[18px] md:text-[22px]'>
+								Follow us
+							</p>
+							<div className='flex flex-row gap-4'>
+								<a
+									href='https://www.facebook.com/'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<FontAwesomeIcon
+										icon={faFacebook}
+										size='xl'
+									/>
+								</a>
+								<a
+									href='https://www.instagram.com/'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<FontAwesomeIcon
+										icon={faInstagram}
+										size='xl'
+									/>
+								</a>
+								<a
+									href='https://www.twitter.com/'
+									target='_blank'
+									rel='noreferrer'
+								>
+									<FontAwesomeIcon
+										icon={faTwitter}
+										size='xl'
+									/>
+								</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
 		</main>
 	);
 }
