@@ -39,10 +39,6 @@ body {
 	transition: opacity 1200ms ease-out, transform 600ms ease-out,
 		visibility 1200ms ease-out;
 	will-change: opacity, transform, visibility;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 }
 
 .fade-in-left {
@@ -52,10 +48,6 @@ body {
 	transition: opacity 1200ms ease-out, transform 600ms ease-out,
 		visibility 1200ms ease-out;
 	will-change: opacity, transform, visibility;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 }
 
 .fade-in-right {
@@ -65,10 +57,6 @@ body {
 	transition: opacity 1200ms ease-out, transform 600ms ease-out,
 		visibility 1200ms ease-out;
 	will-change: opacity, transform, visibility;
-	display: flex;
-	flex-direction: row;
-	justify-content: center;
-	align-items: center;
 }
 
 .is-visible {

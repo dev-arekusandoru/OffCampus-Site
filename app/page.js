@@ -104,7 +104,10 @@ export default function Home() {
 									About Us
 								</h1>
 							</FadeInSection>
-							<FadeInSection delay={150}>
+							<FadeInSection
+								delay={150}
+								style={'flex flex-row justify-center'}
+							>
 								<p className='text-center text-[16px] lg:text-[18px] items-center pb-[10px] lg:pb-[30px] max-w-[80%] xl:px-10'>
 									At OffCampus, we understand the challenges
 									students face when seeking accommodations
@@ -234,111 +237,173 @@ export default function Home() {
 					</FadeInSection>
 				</div>
 			</div>
-			<div className='w-full flex flex-row justify-center min-h-[250px] mt-[40px] bg-primary pt-4'>
-				<div className='flex flex-col md:flex-row max-w-[1600px]'>
-					<div>
-						<div className='flex flex-row items-center pl-1 md:pl-0'>
-							<Image
-								src={iconImage}
-								width={50}
-								height={50}
-							></Image>
-							<p className='text-[24px] md:text-[30px] font-bold pt-2'>
-								OffCampus
-							</p>
-						</div>
-						<p className='text-[12px] w-[80%] pl-4 md:pt-2'>
-							Simplifying the search for off-campus housing and
-							fostering community connections for university
-							students.
-						</p>
-						<p className='text-background text-[12px] pt-2 pl-4 w-full'>
-							&copy; {year} OffCampus. All rights reserved.
-						</p>
-					</div>
-					<div className='flex flex-row pl-4 pt-6 md:pt-4 gap-10 min-w-[350px]'>
-						<div className='pb-6'>
-							<p className='uppercase font-[600] text-[18px] md:text-[22px]'>
-								Navigate To
-							</p>
-							<div className='flex flex-col gap-1'>
-								<a
-									href='#about-us'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<p className='text-[14px]'>About Us</p>
-								</a>
-								<a
-									href='#meet-the-team'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<p className='text-[14px]'>Meet The Team</p>
-								</a>
-								<a
-									href='#what-our-users-are-saying'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<p className='text-[14px]'>Testimonials</p>
-								</a>
-								<a
-									href='#faqs'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<p className='text-[14px]'>FAQs</p>
-								</a>
-								<a
-									href='#additional-resources'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<p className='text-[14px]'>Resources</p>
-								</a>
-							</div>
-						</div>
+
+			<FadeInSection width={'w-full'}>
+				<footer className='w-full flex flex-row justify-center min-h-[250px] mt-[40px] bg-primary pt-4 text-background'>
+					<div className='flex flex-col md:flex-row max-w-[1600px]'>
 						<div>
-							<p className='uppercase font-[600] text-[18px] md:text-[22px]'>
-								Follow us
-							</p>
-							<div className='flex flex-row gap-4'>
-								<a
-									href='https://www.facebook.com/'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<FontAwesomeIcon
-										icon={faFacebook}
-										size='xl'
-									/>
-								</a>
-								<a
-									href='https://www.instagram.com/'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<FontAwesomeIcon
-										icon={faInstagram}
-										size='xl'
-									/>
-								</a>
-								<a
-									href='https://www.twitter.com/'
-									target='_blank'
-									rel='noreferrer'
-								>
-									<FontAwesomeIcon
-										icon={faTwitter}
-										size='xl'
-									/>
-								</a>
-							</div>
+							<FadeInSection direction='left' delay={60}>
+								<div className='flex flex-row items-center pl-1 md:pl-0'>
+									<Image
+										src={iconImage}
+										width={50}
+										height={50}
+									></Image>
+									<p className='text-[24px] md:text-[30px] font-bold pt-2'>
+										OffCampus
+									</p>
+								</div>
+							</FadeInSection>
+							<FadeInSection delay={120} direction='left'>
+								<p className='text-[12px] w-[80%] pl-4 md:pt-2'>
+									Simplifying the search for off-campus
+									housing and fostering community connections
+									for university students.
+								</p>
+							</FadeInSection>
+							<FadeInSection delay={180} direction='left'>
+								<p className='text-background text-[12px] pt-2 pl-4 w-full'>
+									&copy; {year} OffCampus. All rights
+									reserved.
+								</p>
+							</FadeInSection>
 						</div>
+						<FadeInSection direction='right'>
+							<div className='flex flex-row pl-4 pt-6 md:pt-4 gap-10 min-w-[350px]'>
+								<div className='pb-6'>
+									<p className='uppercase font-[600] text-[18px] md:text-[22px]'>
+										Navigate To
+									</p>
+									<div className='flex flex-col gap-1'>
+										<FadeInSection
+											delay={60}
+											direction='right'
+										>
+											<a
+												href='#about-us'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<p className='text-[14px]'>
+													About Us
+												</p>
+											</a>
+										</FadeInSection>
+										<FadeInSection
+											delay={120}
+											direction='right'
+										>
+											<a
+												href='#meet-the-team'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<p className='text-[14px]'>
+													Meet The Team
+												</p>
+											</a>
+										</FadeInSection>
+										<FadeInSection
+											delay={180}
+											direction='right'
+										>
+											<a
+												href='#what-our-users-are-saying'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<p className='text-[14px]'>
+													Testimonials
+												</p>
+											</a>
+										</FadeInSection>
+										<FadeInSection
+											delay={240}
+											direction='right'
+										>
+											<a
+												href='#faqs'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<p className='text-[14px]'>
+													FAQs
+												</p>
+											</a>
+										</FadeInSection>
+										<FadeInSection
+											delay={300}
+											direction='right'
+										>
+											<a
+												href='#additional-resources'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<p className='text-[14px]'>
+													Resources
+												</p>
+											</a>
+										</FadeInSection>
+									</div>
+								</div>
+								<div>
+									<p className='uppercase font-[600] text-[18px] md:text-[22px]'>
+										Follow us
+									</p>
+									<div className='flex flex-row gap-4'>
+										<FadeInSection
+											delay={60}
+											direction='right'
+										>
+											<a
+												href='https://www.facebook.com/'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<FontAwesomeIcon
+													icon={faFacebook}
+													size='xl'
+												/>
+											</a>
+										</FadeInSection>
+										<FadeInSection
+											delay={120}
+											direction='right'
+										>
+											<a
+												href='https://www.instagram.com/'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<FontAwesomeIcon
+													icon={faInstagram}
+													size='xl'
+												/>
+											</a>
+										</FadeInSection>
+										<FadeInSection
+											delay={180}
+											direction='right'
+										>
+											<a
+												href='https://www.twitter.com/'
+												target='_blank'
+												rel='noreferrer'
+											>
+												<FontAwesomeIcon
+													icon={faTwitter}
+													size='xl'
+												/>
+											</a>
+										</FadeInSection>
+									</div>
+								</div>
+							</div>
+						</FadeInSection>
 					</div>
-				</div>
-			</div>
+				</footer>
+			</FadeInSection>
 		</main>
 	);
 }
